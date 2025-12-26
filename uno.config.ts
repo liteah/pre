@@ -3,6 +3,7 @@ import {
   presetAttributify,
   presetIcons,
   presetTypography,
+  presetWebFonts,
   presetWind4,
   transformerDirectives,
   transformerVariantGroup,
@@ -14,6 +15,12 @@ export default defineConfig({
     presetAttributify(),
     presetIcons(),
     presetTypography(),
+    presetWebFonts({
+      provider: 'none',
+      fonts: {
+        sans: ['Inter', 'IBM Plex Sans SC', 'IBMPlexSansTC'],
+      },
+    }),
   ],
   transformers: [
     transformerDirectives(),
