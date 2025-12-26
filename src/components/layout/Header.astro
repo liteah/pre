@@ -1,0 +1,46 @@
+---
+import { config } from '@/config'
+import { useTranslations } from '@/utils/i18n'
+
+const t = useTranslations(Astro.currentLocale)
+
+const links = [
+  {
+    label: t({ en: 'Company', 'zh-cn': '企业', 'zh-tw': '企業' }),
+    href: '/',
+  },
+  {
+    label: t({ en: 'Blog', 'zh-cn': '博客', 'zh-tw': '網誌' }),
+    href: '/blog',
+  },
+  {
+    label: t({ en: 'News', 'zh-cn': '新闻', 'zh-tw': '新聞' }),
+    href: '/news',
+  },
+  {
+    label: t({ en: 'Recruit', 'zh-cn': '招聘', 'zh-tw': '徵才' }),
+    href: '/recruit',
+  },
+  {
+    label: t({ en: 'Contact', 'zh-cn': '联系我们', 'zh-tw': '聯絡我們' }),
+    href: '/contact',
+  },
+]
+---
+
+<header class="sticky top-0 z-10 py-3 px-6 bg-white/70 backdrop-blur-xl">
+  <nav class="container mx-auto flex items-center justify-between">
+    <a href="/">{config.name}</a>
+    <ul class="flex gap-4">
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href} class="op-50 hover:op-100 transition-opacity">
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>

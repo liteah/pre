@@ -1,28 +1,6 @@
 import type { GetStaticPathsResult } from 'astro'
-import { getRelativeLocaleUrl } from 'astro/virtual-modules/i18n.js'
-
-export const defalutLocale: string = 'en'
-
-interface LocaleConfig {
-  readonly label: string
-  readonly lang?: string
-  readonly dir?: 'ltr' | 'rtl'
-} // refer: https://starlight.astro.build/reference/configuration/#locales
-
-export const locales: Record<string, LocaleConfig> = {
-  'en': {
-    label: 'English',
-    lang: 'en-US',
-  },
-  'zh-cn': {
-    label: '简体中文',
-    lang: 'zh-CN',
-  },
-  'zh-tw': {
-    label: '繁體中文',
-    lang: 'zh-TW',
-  },
-}
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import { defalutLocale, locales } from '@/i18n.config'
 
 /**
  * Type for the multilingual object
@@ -73,7 +51,7 @@ export function getLocaleParams(): GetStaticPathsResult {
   return Object.keys(locales).map((locale) => {
     if (locale === 'en') {
       return {
-        params: { locale: '' },
+        params: { locale: undefined },
       }
     }
     return {
