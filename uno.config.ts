@@ -10,6 +10,17 @@ import {
 } from 'unocss'
 
 export default defineConfig({
+  theme: {
+    colors: {
+      'primary': '#3b82f6',
+      'background': '#ffffff',
+      'foreground': '#333333',
+      'secondary': '#f3f4f6',
+      'secondary-foreground': '#4b5563',
+      'muted': '#f9fafb',
+      'muted-foreground': '#6b7280',
+    },
+  },
   presets: [
     presetWind4(),
     presetAttributify(),

@@ -1,0 +1,33 @@
+---
+// Select UI to switch between locales.
+
+import { locales } from '@/i18n.config'
+import { getLocalePaths } from '@/utils/i18n'
+---
+
+<label>
+  <select data-locale-select class="text-muted-foreground appearance-none" focus-visible="text-foreground outline-none">
+    {
+      getLocalePaths(Astro.url).map(({ path, locale }) => (
+        <option
+          label={locales[locale].label}
+          value={path}
+          data-lang={locale}
+          selected={locale === Astro.currentLocale}
+          dir={locales[locale].dir || null}
+        />
+      ))
+    }
+  </select>
+
+  <script is:inline>
+    const selects = document.querySelectorAll('[data-locale-select]')
+
+    selects.forEach((select) => {
+      select.addEventListener('change', (event) => {
+        localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang
+        location.href = event.target?.value
+      })
+    })
+  </script>
+</label>

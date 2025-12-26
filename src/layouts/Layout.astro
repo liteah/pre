@@ -16,7 +16,7 @@ const locale = Astro.currentLocale
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title ? `${title} | ${config.name}` : config.name}</title>
   </head>
-  <body class="antialiased mx-auto">
+  <body class="antialiased mx-auto text-foreground">
     <Header />
     <main class:list={['min-h-screen', className]}>
       <slot />
