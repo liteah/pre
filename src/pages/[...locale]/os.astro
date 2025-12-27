@@ -2,6 +2,7 @@
 import { getLocaleParams, useTranslations } from '@/utils/i18n'
 import Layout from '@/layouts/Layout.astro'
 import Hero from '@/components/page/os-6/Hero.astro'
+import FeatureMemory from '@/components/page/os-6/FeatureMemory.astro'
 
 const t = useTranslations(Astro.currentLocale)
 
@@ -12,4 +13,7 @@ export function getStaticPaths() {
 
 <Layout>
   <Hero />
+  <div class="container mx-auto py-16 sm:py-24 px-6 sm:px-0">
+    <FeatureMemory />
+  </div>
 </Layout>
