@@ -1,0 +1,28 @@
+---
+import { useTranslations } from '@/utils/i18n'
+import { getAbsoluteLocaleUrl, getRelativeLocaleUrl } from 'astro:i18n'
+
+const locale = Astro.currentLocale as string
+const t = useTranslations(locale)
+---
+
+<div class="container mx-auto">
+  <a
+    href={getRelativeLocaleUrl(locale, 'os')}
+    class="flex flex-col gap-4 items-center bg-gradient-to-b from-primary/50 to-muted px-6 sm:px-14 py-8 sm:py-16 rounded-xl"
+  >
+    <h1 class="text-h1">PRE OS 6</h1>
+    <p class="text-h2">
+      {
+        t({
+          en: 'The AI Generation Native OS',
+          'zh-cn': '大模型时代的AI原生操作系统',
+          'zh-tw': '大模型時代的AI原生作業系統',
+        })
+      }
+    </p>
+    <span class="text-primary sm:text-lg">
+      {t({ en: 'Learn More', 'zh-cn': '进一步了解', 'zh-tw': '進一步瞭解' })}
+    </span>
+  </a>
+</div>

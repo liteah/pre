@@ -21,6 +21,13 @@ export default defineConfig({
       'muted-foreground': '#6b7280',
     },
   },
+  shortcuts: {
+    'text-h1': 'font-bold text-4xl sm:text-5xl tracking-tight text-pretty text-balance',
+    'text-h2': 'font-semibold text-2xl sm:text-3xl tracking-tight text-pretty text-balance',
+    'text-h3': 'font-medium text-xl sm:text-2xl',
+    'text-h4': 'text-lg sm:text-xl',
+    'text-gradient-primary': 'bg-gradient-to-r from-primary to-primary/75 bg-clip-text text-transparent',
+  },
   presets: [
     presetWind4(),
     presetAttributify(),
@@ -29,7 +36,7 @@ export default defineConfig({
     presetWebFonts({
       provider: 'none',
       fonts: {
-        sans: ['Inter', 'IBM Plex Sans SC', 'IBMPlexSansTC'],
+        sans: ['Inter', 'IBMPlexSansSC', 'IBMPlexSansTC'],
       },
     }),
   ],

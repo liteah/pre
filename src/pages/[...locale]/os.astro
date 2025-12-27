@@ -1,0 +1,15 @@
+---
+import { getLocaleParams, useTranslations } from '@/utils/i18n'
+import Layout from '@/layouts/Layout.astro'
+import Hero from '@/components/page/os-6/Hero.astro'
+
+const t = useTranslations(Astro.currentLocale)
+
+export function getStaticPaths() {
+  return getLocaleParams()
+}
+---
+
+<Layout>
+  <Hero />
+</Layout>

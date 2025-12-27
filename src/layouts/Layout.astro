@@ -16,7 +16,7 @@ const locale = Astro.currentLocale
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title ? `${title} | ${config.name}` : config.name}</title>
   </head>
-  <body class="antialiased mx-auto text-foreground">
+  <body class="antialiased mx-auto text-foreground select-text selection:bg-primary/30">
     <Header />
     <main class:list={['min-h-screen', className]}>
       <slot />
@@ -39,7 +39,7 @@ const locale = Astro.currentLocale
       url('https://fonts.googleapis.cn/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
     </style>
   ) : locale === 'zh-cn' ? (
-    <style>@import url("https://fontsapi.zeoseven.com/389/main/result.css");</style>
+    <style>@import url("https://font.emtech.cc/css/IBMPlexSansSC");</style>
   ) : locale === 'zh-tw' ? (
     <style>@import url("https://font.emtech.cc/css/IBMPlexSansTC");</style>
   ) : null

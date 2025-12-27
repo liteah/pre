@@ -1,6 +1,7 @@
 ---
 import { getLocaleParams, useTranslations } from '@/utils/i18n'
 import Layout from '@/layouts/Layout.astro'
+import Banner from '@/components/page/home/Banner.astro'
 
 const locale = Astro.currentLocale
 const t = useTranslations(locale)
@@ -11,13 +12,5 @@ export function getStaticPaths() {
 ---
 
 <Layout>
-  <span class="text-5xl">
-    {
-      t({
-        en: 'hello',
-        'zh-cn': '天地人言語',
-        'zh-tw': '天地人言語',
-      })
-    }
-  </span>
+  <Banner />
 </Layout>
