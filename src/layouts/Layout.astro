@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer.astro'
 import Header from '@/components/layout/Header.astro'
 import { config } from '@/config'
 import { locales } from '@/i18n.config'
+import { ClientRouter } from 'astro:transitions'
 
 const { title, class: className } = Astro.props
 const locale = Astro.currentLocale
