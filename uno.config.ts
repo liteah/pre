@@ -41,7 +41,7 @@ export default defineConfig({
     presetWebFonts({
       provider: 'none',
       fonts: {
-        sans: ['Inter', 'IBMPlexSansSC', 'IBMPlexSansTC'],
+        sans: ['IBM Plex Sans', 'IBMPlexSansSC', 'IBMPlexSansTC'],
       },
     }),
   ],

@@ -1,0 +1,3 @@
+<template>
+  <PageHomeBanner />
+</template>

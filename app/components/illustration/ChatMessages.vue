@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { motion } from 'motion-v'
-import ChatMessage from '@/components/ui/ChatMessage.vue'
 
 defineProps<{ messages: { type: string, message: string }[] }>()
 </script>
@@ -16,8 +15,8 @@ defineProps<{ messages: { type: string, message: string }[] }>()
     :in-view-options="{ once: true }"
     class="flex flex-col"
   >
-    <ChatMessage :type="message.type">
+    <IllustrationChatMessage :type="message.type">
       {{ message.message }}
-    </ChatMessage>
+    </IllustrationChatMessage>
   </motion.div>
 </template>
